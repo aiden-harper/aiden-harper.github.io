@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Aiden</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">Aiden Harper</div>
+            <div class="nav-right">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="projects">
+            <h1>Projects</h1>
+            <ul>
+                <li>
+                    <h5>Hardware Polynomial Multiplier</h5>
+                    <p class="award">2nd Place Winner at NAU Engineering Fest 2025</p>
+                    <p>
+                        <i>Hardware design to optimize polynomial multiplication for post-quantum cryptography.</i>
+                        
+                        <div class="links">
+                            Project website and GitHub are available here:
+                            <a href ="https://ceias.nau.edu/capstone/projects/EE/2025/PolyMult/">Website</a>
+                            <a href ="https://github.com/aiden-harper/Hardware-Polynomial-Multiplier">GitHub</a>
+                        </div>
+
+                        <p>
+                            This design utilizes the Number Theoretic Transform (NTT), a version of the Fourier Transform
+                            over a discrete polynomial ring. Two polynomials are transformed using the NTT, point-wise multiplied,
+                            and then untransformed using the Inverse Number Theoretic Transform (INTT), yielding the result of polynomial
+                            mulitplication over a given polynomial ring.
+
+                            Our design is built to specifically target the CRYSTALS-Kyber Post-Quantum Cryptography Algorithm.
+                        </p>
+                    </p>
+                </li>
+
+                <hr>
+
+                <li>
+                    <h5>Analog Scrambling using Chaotic Behavior</h5>
+                    <p>
+                        <i>Constructed an analog circuit to scramble audio signals using chaotic behavior
+                             (without any digital encryption/processing) for secure voice communications.</i>
+                    </p>
+
+                    <p>
+                        This project uses synchronized Chua circuits, a type of chaotic circuit. One Chua
+                        Circuit modulates the input waveform, then the waveform is transmitted, and the other
+                        Chua circuits removes the modulation. Due to the chaotic nature, this system is relatively
+                        cryptographically secure without requiring any digital components.
+                    </p>
+
+                    <p>
+                        This project was built in NI Multisim and then constructed on breadboards for demonstration.
+                        A sample demonstration can be viewed below using Falstad Circuit Simulator.
+                    </p>
+
+                    <div class="circuit-simulation">
+                        <div class="circuit-instructions">
+                            <p><b>Instructions:</b></p>
+                            <ul>
+                                <li>Download the .wav file below or use your own</li>
+                                <li>Upload the .wav file in the top left of the circuit simulator</li>
+                                <li>Wait a few moments for the circuit to run</li>
+                                <li>Audio 1 will play the original audio, Audio 2 will play the scrambled
+                                    audio, and Audio 3 will play the descrambled audio
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="/files/test_audio.wav" download>Download Sample Audio</a>
+                        <iframe 
+                            src="https://tinyurl.com/286535mr" 
+                            width="100%" 
+                            height="500px" 
+                            style="border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); border-radius: 8px;" 
+                            scrolling="yes"
+                            title="Circuit Simulation - Analog Scrambler">
+                        </iframe>
+                    </div>
+                </li>
+
+                <hr>
+
+                <li>
+                    <h5>6502 Microprocessor</h5>
+
+                    <p>
+                        <i>Built an 8-bit computer with an W65C02S 8-bit microprocessor to experiment with
+                           computer architecture and low-level programming. Using 
+                           <a href="https://eater.net/6502" target="_blank">Ben Eater's 6502 Microprocessor series</a>
+                        </i>
+                    </p>
+
+                    <p>
+                        The 8-bit computer was powered by a W65C025 microprocessor and an AT28C256 EEPROM. In order to program
+                        machine code, I built a EEPROM programmer using an Arduino NANO, supported by the VASM 6502 assembler
+                        and a python script to upload the assembly using USB. There is a clock unit powering the computer using the
+                        555 Timer IC, with a monostable, bistable, and astable mode. Additionally, I built a custom Arduino I/O 
+                        expander using a SN4HC165 8-bit parallel-in and serial-out shift registers to 
+                        monitor the 6502 microprocessor. The Arduino NANO does not have enough I/O ports for the microprocessor:
+                        the I/O expander allows the Arduion to read all possible microprocessor ports using serial transfer.
+                    </p>
+
+                    <p>
+                        The video below shows an example assembly program for an LED display, along with the machine
+                        code being shown using the Arduino interface, which is possible via the custom Arduino I/O expander.
+                    </p>
+
+                    <video width="640" height="360" controls muted>
+                        <source src="/files/6502_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
